@@ -1,0 +1,29 @@
+---
+title: "Correlation Plots ChIP-seq"
+author: "Pablo Monteagudo"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(knitr)    # For knitting document and include_graphics function
+```
+
+\newpage
+
+# Correlation Plots ChIP-seq:
+
+```{r get_files, echo=FALSE}
+seq_category <- "ChIP"
+
+img_dir <- file.path("/gcm-lfs1/pablo/data/rna_silencing/results/xp_data", seq_category, "CORR")
+all_files <- list.files(path = img_dir , pattern = ".png", full.names = TRUE, recursive = TRUE)
+```
+
+
+```{r Corr_ChIP,   echo=FALSE}
+include_graphics(all_files, dpi = 180)
+```

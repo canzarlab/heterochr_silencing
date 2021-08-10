@@ -1,0 +1,269 @@
+---
+title: "S2-ChIP INPUT subtraction factors"
+author: "Pablo Monteagudo"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: pdf_document
+header-includes:
+  - \usepackage{subfig}
+  - \usepackage{float}
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(out.extra = "", fig.pos = "H", fig.align = "center", out.width = "0.8\\textwidth")
+
+library(tidyverse)
+library(knitr)    # For knitting document and include_graphics function
+```
+
+\newpage
+
+# S2-ChIP INPUT subtraction factors and Coverage Profiles
+
+```{r cars, echo=FALSE}
+seq_category <- "S2-ChIP"
+count_mode <- "lambda"
+ignore_input_subtracted <- FALSE
+  
+coverage_dir <- file.path("/gcm-lfs1/pablo/data/rna_silencing/seq_data", seq_category, "INPUT_factors")
+all_files <- list.files(path = coverage_dir , pattern = ".pdf", full.names = TRUE, recursive = TRUE)
+
+## counter for visualized samples
+total_samples <- 0
+```
+
+
+### Samples - WT_S2-ChIP
+
+```{r WT_S2-ChIP, echo=FALSE}
+
+# https://stackoverflow.com/questions/12546365/subfigures-or-subcaptions-with-knitr
+# https://bookdown.org/yihui/rmarkdown-cookbook/figure-placement.html
+# https://github.com/yihui/knitr/pull/1444
+
+sample_name <- "WT_S2-ChIP"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+### Samples - 80_S2-ChIP
+
+```{r 80_S2-ChIP, echo=FALSE}
+
+sample_name <- "80_S2-ChIP"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+### Samples - 301_S2-ChIP
+
+```{r 301_S2-ChIP, echo=FALSE}
+
+sample_name <- "301_S2-ChIP"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+### Samples - 302_S2-ChIP
+
+```{r 302_S2-ChIP, echo=FALSE}
+
+sample_name <- "302_S2-ChIP"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+### Samples - 324_S2-ChIP
+
+```{r 324_S2-ChIP, echo=FALSE}
+
+sample_name <- "324_S2-ChIP"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+\newpage
+
+### Samples - 491_S2-ChIP
+
+```{r 491_S2-ChIP, echo=FALSE}
+
+sample_name <- "491_S2-ChIP"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+\newpage
+
+### Samples - 504_S2-ChIP
+
+```{r 504_S2-ChIP, echo=FALSE}
+
+sample_name <- "504_S2-ChIP"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+### Samples - 510_S2-ChIP
+
+```{r 510_S2-ChIP, echo=FALSE}
+
+sample_name <- "510_S2-ChIP"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+### Samples - 523_S2-ChIP
+
+```{r 523_S2-ChIP, echo=FALSE}
+
+sample_name <- "523_S2-ChIP"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+### Samples - 524_S2-ChIP
+
+```{r 524_S2-ChIP, echo=FALSE}
+
+sample_name <- "524_S2-ChIP"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+### Samples - 530_S2-ChIP
+
+```{r 530_S2-ChIP, echo=FALSE}
+
+sample_name <- "530_S2-ChIP"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+### Samples - 544_S2-ChIP
+
+```{r 544_S2-ChIP, echo=FALSE}
+
+sample_name <- "544_S2-ChIP"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+### Samples -591_S2-ChIP
+
+```{r 591_S2-ChIP, echo=FALSE}
+
+sample_name <- "591_S2-ChIP"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+### Samples - 638_S2-ChIP
+
+```{r 638_S2-ChIP, echo=FALSE}
+
+sample_name <- "638_S2-ChIP"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+
+### Samples - 1022_S2-ChIP
+
+```{r 1022_S2-ChIP, echo=FALSE}
+
+sample_name <- "1022_S2-ChIP"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+### Samples - 1168_S2-ChIP
+
+```{r 1168_S2-ChIP, echo=FALSE}
+
+sample_name <- "1168_S2-ChIP"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+## Total Samples: `r total_samples`

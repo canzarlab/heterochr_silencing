@@ -1,0 +1,49 @@
+## Jupyter notebooks
+.ipynb_checkpoints
+
+## Images
+*.png
+
+## python
+*.pyc
+
+.snakemake
+rules/.snakemake
+Log.out
+.idea/
+.Rproj.user
+silencing_project.Rproj
+.Rhistory
+.directory
+.DS_Store
+._.DS_Store
+
+## directories
+benchmarks/
+slurm_job_files
+
+## subdirectories
+htseq/data
+htseq/plots
+
+## old results
+old_results/
+results_16-06-21/
+
+## coverage plots
+r_scripts_coverage/results/plots
+r_scripts_coverage/results
+
+## r plots
+r_plots/results
+r_plots/results_25-06-21
+r_plots/results_28-06-21
+
+._*
+
+
+## ignore also
+r_plots/
+r_scripts_coverage/
+
+

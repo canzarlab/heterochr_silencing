@@ -1,0 +1,136 @@
+---
+title: "Simulated/Fake reads Summary Coverage Plots"
+author: "Pablo Monteagudo"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(knitr)    # For knitting document and include_graphics function
+```
+
+\newpage
+
+# Simulated/Fake reads Coverage Profiles
+
+```{r cars, echo=FALSE}
+seq_category <- "simulated-data"
+#count_mode <- "frac"
+
+coverage_dir <- file.path("/gcm-lfs1/pablo/data/rna_silencing/results", seq_category, "coverage")
+all_files <- list.files(path = coverage_dir , pattern = ".pdf", full.names = TRUE, recursive = TRUE)
+
+## counter for visualized samples
+total_samples <- 0
+```
+
+\newpage
+
+## Fake-reads Samples - Using ChIP Pipeline (Unstranded)
+
+### A. Fractional Coverage
+
+```{r frac fake-reads ChIP, echo=FALSE}
+
+pipeline_mode <- "chip_"
+count_mode <- "frac"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=pipeline_mode)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+### B. Integer Coverage
+
+```{r int fake-reads ChIP, echo=FALSE}
+
+pipeline_mode <- "chip_"
+count_mode <- "int"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=pipeline_mode)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+\newpage
+
+
+## Fake-reads Samples - Using RNA Pipeline (Stranded - Filtered/Tagged)
+
+### A. Fractional Coverage
+
+```{r frac tagged fake-reads RNA, echo=FALSE}
+
+pipeline_mode <- "rna_tagged_fake"
+count_mode <- "frac"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=pipeline_mode)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+## B. Integer Coverage
+
+```{r int tagged fake-reads RNA, echo=FALSE}
+
+pipeline_mode <- "rna_tagged_fake"
+count_mode <- "int"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=pipeline_mode)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+\newpage
+
+
+### Fake-reads Samples - Using RNA Pipeline (Stranded)
+
+## A. Fractional Coverage
+
+```{r frac fake-reads RNA, echo=FALSE}
+
+pipeline_mode <- "rna_fake"
+count_mode <- "frac"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=pipeline_mode)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+## B. Integer Coverage
+
+```{r int fake-reads RNA, echo=FALSE}
+
+pipeline_mode <- "rna_fake"
+count_mode <- "int"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=pipeline_mode)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+\newpage
+
+## Total Samples: `r total_samples`

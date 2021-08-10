@@ -1,0 +1,353 @@
+---
+title: "H3K9me2 Summary Coverage Plots"
+author: "Pablo Monteagudo"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(knitr)    # For knitting document and include_graphics function
+```
+
+\newpage
+
+# H3K9me2 Coverage Profiles
+
+```{r H3K9me2 files, echo=FALSE}
+seq_category <- "H3K9me2"
+#count_mode <- "frac"
+
+coverage_dir <- file.path("/gcm-lfs1/pablo/data/rna_silencing/results", seq_category, "coverage")
+all_files <- list.files(path = coverage_dir , pattern = ".pdf", full.names = TRUE, recursive = TRUE)
+
+## counter for visualized samples
+total_samples <- 0
+```
+
+\newpage
+
+## Samples - WT_H3K9me2
+
+## A. Fractional Coverage
+
+```{r WT frac H3K9me2, echo=FALSE}
+
+sample_name <- "WT_"
+count_mode <- "frac"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+## B. Integer Coverage
+
+```{r WT int H3K9me2, echo=FALSE}
+
+sample_name <- "WT_"
+count_mode <- "int"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+<!-- ## Samples - 80_H3K9me2 (clr4d)-->
+
+<!-- ## A. Fractional Coverage -->
+
+<!-- ```{r 80 frac H3K9me2, echo=FALSE} -->
+
+<!-- sample_name <- "80_" -->
+<!-- count_mode <- "frac" -->
+
+<!-- files <- str_subset(all_files, pattern=count_mode) -->
+<!-- files <- str_subset(files, pattern=sample_name) -->
+
+<!-- total_samples <- total_samples + length(files) -->
+
+<!-- include_graphics(files) -->
+<!-- ``` -->
+
+<!-- ## B. Integer Coverage -->
+
+<!-- ```{r 80 int H3K9me2, echo=FALSE} -->
+
+<!-- sample_name <- "80_" -->
+<!-- count_mode <- "int" -->
+
+<!-- files <- str_subset(all_files, pattern=count_mode) -->
+<!-- files <- str_subset(files, pattern=sample_name) -->
+
+<!-- total_samples <- total_samples + length(files) -->
+
+<!-- include_graphics(files) -->
+<!-- ``` -->
+
+## Samples - 301_H3K9me2 (swi6d)
+
+## A. Fractional Coverage
+
+```{r 301 frac H3K9me2, echo=FALSE}
+
+sample_name <- "301_"
+count_mode <- "frac"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+## B. Integer Coverage
+
+```{r 301 int H3K9me2, echo=FALSE}
+
+sample_name <- "301_"
+count_mode <- "int"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+## Samples - 302_H3K9me2 (clr3d)
+
+## A. Fractional Coverage
+
+```{r 302 frac H3K9me2, echo=FALSE}
+
+sample_name <- "302_"
+count_mode <- "frac"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+## B. Integer Coverage
+
+```{r 302 int H3K9me2, echo=FALSE}
+
+sample_name <- "302_"
+count_mode <- "int"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+## Samples - 324_H3K9me2 (chp2d)
+
+## A. Fractional Coverage
+
+```{r 324 frac H3K9me2, echo=FALSE}
+
+sample_name <- "324_"
+count_mode <- "frac"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+## B. Integer Coverage
+
+```{r 324 int H3K9me2, echo=FALSE}
+
+sample_name <- "324_"
+count_mode <- "int"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+## Samples - 491_H3K9me2 (mit1d)
+
+## A. Fractional Coverage
+
+```{r 491 frac H3K9me2, echo=FALSE}
+
+sample_name <- "491_"
+count_mode <- "frac"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+## B. Integer Coverage
+
+```{r 491 int H3K9me2, echo=FALSE}
+
+sample_name <- "491_"
+count_mode <- "int"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+## Samples - 504_H3K9me2 (rrp6d)
+
+## A. Fractional Coverage
+
+```{r 504 frac H3K9me2, echo=FALSE}
+
+sample_name <- "504_"
+count_mode <- "frac"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+## B. Integer Coverage
+
+```{r 504 int H3K9me2, echo=FALSE}
+
+sample_name <- "504_"
+count_mode <- "int"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+## Samples - 510_H3K9me2 (caf1d)
+
+## A. Fractional Coverage
+
+```{r 510 frac H3K9me2, echo=FALSE}
+
+sample_name <- "510_"
+count_mode <- "frac"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+## B. Integer Coverage
+
+```{r 510 int H3K9me2, echo=FALSE}
+
+sample_name <- "510_"
+count_mode <- "int"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+## Samples - 530_H3K9me2 (exo2d)
+
+## A. Fractional Coverage
+
+```{r 530 frac H3K9me2, echo=FALSE}
+
+sample_name <- "530_"
+count_mode <- "frac"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+## B. Integer Coverage
+
+```{r 530 int H3K9me2, echo=FALSE}
+
+sample_name <- "530_"
+count_mode <- "int"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+## Samples - 638_H3K9me2 (ago1d)
+
+## A. Fractional Coverage
+
+```{r 638 frac H3K9me2, echo=FALSE}
+
+sample_name <- "638_"
+count_mode <- "frac"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+## B. Integer Coverage
+
+```{r 638 int H3K9me2, echo=FALSE}
+
+sample_name <- "638_"
+count_mode <- "int"
+
+files <- str_subset(all_files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+
+## Total Samples: `r total_samples`

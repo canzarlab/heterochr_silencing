@@ -1,0 +1,238 @@
+---
+title: "Manuscript Plots - Silencing Project"
+author: "Pablo Monteagudo"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: pdf_document
+header-includes:
+  - \usepackage{subfig}
+  - \usepackage{float}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(knitr)    # For knitting document and include_graphics function
+#library(cowplot)
+#library(patchwork)
+
+```
+
+\newpage
+
+```{r get_files, echo=FALSE}
+#seq_category <- "Ratios"
+
+# img_dir <- file.path("/gcm-lfs1/pablo/data/rna_silencing/results/Ratios/Plots")
+# img_dir <- file.path("/gcm-lfs1/pablo/data/rna_silencing/results/Ratios/Plots_v2")
+# img_dir <- file.path("/gcm-lfs1/pablo/data/rna_silencing/results/Ratios/Plots_591")
+#img_dir <- file.path("/gcm-lfs1/pablo/data/rna_silencing/results/Ratios/Plots_24-08-20")
+#img_dir <- file.path("/gcm-lfs1/pablo/data/rna_silencing/results/Ratios/Plots_04-11-20")
+#img_dir <- file.path("/gcm-lfs1/pablo/data/rna_silencing/results/Ratios/Plots_21-01-21")
+#img_dir <- file.path("/gcm-lfs1/pablo/data/rna_silencing/results/Ratios/Plots_29-03-21")
+img_dir <- file.path("/gcm-lfs1/pablo/data/rna_silencing/results/Ratios/Plots_23-05-21")
+
+
+#all_files <- list.files(path = img_dir , pattern = ".png", full.names = TRUE, recursive = TRUE)
+all_files <- list.files(path = img_dir , pattern = ".pdf", full.names = TRUE, recursive = TRUE)
+
+```
+
+### Figure 1 - 
+
+```{r Figure 1a, echo=FALSE, fig.show = "hold", out.width = "30%", fig.align = "default"}
+
+sample_name <- "Figure1"
+
+files <- str_subset(all_files, pattern=sample_name)
+
+include_graphics(files)
+```
+
+```{r Figure 1b, echo=FALSE, fig.show = "hold", out.width = "40%", fig.align = "default"}
+#include_graphics(files[3:3])
+```
+
+\newpage
+
+### Figure 2 - 
+
+```{r Figure 2a, echo=FALSE, fig.show = "hold", out.width = "30%", fig.align = "default"}
+
+sample_name <- "Figure2"
+
+files <- str_subset(all_files, pattern=sample_name)
+
+include_graphics(files)
+```
+
+```{r Figure 2b, echo=FALSE, fig.show = "hold", out.width = "40%", fig.align = "default"}
+
+#include_graphics(files[3:3])
+```
+
+\newpage
+
+
+### Figure 3 - 
+
+
+<!-- ```{r Figure 3, echo=FALSE} -->
+
+
+<!-- sample_name <- "Figure3" -->
+
+<!-- files <- str_subset(all_files, pattern=sample_name) -->
+
+<!-- p1 <- ggdraw() + draw_image(files[1], scale = 1) -->
+<!-- p2 <- ggdraw() + draw_image(files[2], scale = 1) -->
+<!-- p3 <- ggdraw() + draw_image(files[3], scale = 1) -->
+<!-- p4 <- ggdraw() + draw_image(files[4], scale = 1) -->
+<!-- p5 <- ggdraw() + draw_image(files[5], scale = 1) -->
+<!-- p6 <- ggdraw() + draw_image(files[6], scale = 1) -->
+
+<!-- plot_grid(p1, p2, -->
+<!--           p3, p4, -->
+<!--           p5, p6, -->
+<!--           align="hv", -->
+<!--           rel_widths = c(3, 1), -->
+<!--           ncol= 2) -->
+
+<!-- ``` -->
+
+```{r Figure 3, echo=FALSE, out.extra = "", fig.pos = "H", fig.align = "default", out.width = "0.48\\textwidth",  fig.ncol = 2}
+
+sample_name <- "Figure3"
+
+files <- str_subset(all_files, pattern=sample_name)
+files <- str_subset(files, pattern="extra-ccr4-not", negate = TRUE)
+
+include_graphics(files)
+
+
+```
+
+\newpage
+
+### Figure 3 - Additional Ccr4-Not complex mutants
+
+```{r Figure 3 extra, echo=FALSE, out.extra = "", fig.pos = "H", fig.align = "default", out.width = "0.48\\textwidth",  fig.ncol = 1}
+
+sample_name <- "Figure3"
+
+files <- str_subset(all_files, pattern=sample_name)
+files <- str_subset(files, pattern="extra-ccr4-not", negate = FALSE)
+
+include_graphics(files)
+
+
+```
+
+\newpage
+
+### Figure 5 - 
+
+```{r Figure 5, echo=FALSE, fig.show = "hold", out.width = "80%", fig.align = "center"}
+
+#sample_name <- "Figure5"
+sample_name <- "Figure5-A_stranded.pdf"
+
+files <- str_subset(all_files, pattern=sample_name)
+
+include_graphics(files)
+```
+
+\newpage
+
+# Manuscript Supplementary Plots - Silencing Project
+
+\newpage
+
+### Supplementary Figure 1 - 
+
+```{r Figure S1a, echo=FALSE, fig.show = "hold", out.width = "50%", fig.align = "default"}
+
+sample_name <- "Figure-S1"
+
+files <- str_subset(all_files, pattern=sample_name)
+
+include_graphics(files)
+```
+
+\newpage
+
+### Supplementary Figure 2 - 
+
+```{r Figure S2a, echo=FALSE, fig.show = "hold", out.width = "50%", fig.align = "default"}
+
+sample_name <- "Figure-S2"
+
+files <- str_subset(all_files, pattern=sample_name)
+
+include_graphics(files)
+```
+
+
+### Supplementary Figure 3 - 
+
+```{r Figure S3a, echo=FALSE, fig.show = "hold", out.width = "50%", fig.align = "default"}
+
+sample_name <- "Figure-S3"
+
+files <- str_subset(all_files, pattern=sample_name)
+files <- str_subset(files, pattern="extra-ccr4-not", negate = TRUE)
+
+include_graphics(files)
+```
+
+\newpage
+
+### Supplementary Figure 3 - Additional Ccr4-Not complex mutants
+
+```{r Figure S3a extra, echo=FALSE, fig.show = "hold", out.width = "50%", fig.align = "default"}
+
+sample_name <- "Figure-S3"
+
+files <- str_subset(all_files, pattern=sample_name)
+files <- str_subset(files, pattern="extra-ccr4-not", negate = FALSE)
+
+include_graphics(files)
+
+
+```
+
+\newpage
+
+# Manuscript Additional Plots - Silencing Project
+
+\newpage
+
+### Intron/Gene Counts Ratio Figure 
+
+
+```{r Figure Splice ratio, echo=FALSE, fig.show = "hold", out.width = "50%", fig.align = "default"}
+
+files <- "/home/pmonteagudo/workspace/silencing_project/results/splice_ratio.pdf"
+include_graphics(files)
+```
+
+
+### tRNAs/mRNAs Ratio Figure 
+
+
+```{r Figure tRNAs ratio, echo=FALSE, fig.show = "hold", out.width = "50%", fig.align = "default"}
+
+files <- "/home/pmonteagudo/workspace/silencing_project/results/trna_ratios.pdf"
+include_graphics(files)
+```
+
+
+<!-- ### INPUT Factors Figure - Average INPUT factor per Mutant type computed using (...) -->
+
+
+<!-- ```{r INPUT factors, echo=FALSE, fig.show = "hold", out.width = "50%", fig.align = "default"} -->
+
+<!-- files <- "/home/pmonteagudo/workspace/silencing_project/results/input_factors.pdf" -->
+<!-- include_graphics(files) -->
+<!-- ``` -->
+

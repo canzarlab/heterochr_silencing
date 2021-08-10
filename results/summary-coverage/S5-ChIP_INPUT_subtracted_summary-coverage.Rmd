@@ -1,0 +1,60 @@
+---
+title: "S5-ChIP Summary Coverage Plots"
+author: "Pablo Monteagudo"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(knitr)    # For knitting document and include_graphics function
+```
+
+\newpage
+
+# S5-ChIP Coverage Profiles
+
+```{r cars, echo=FALSE}
+seq_category <- "S5-ChIP"
+count_mode <- "frac"
+ignore_input_subtracted <- FALSE
+  
+coverage_dir <- file.path("/gcm-lfs1/pablo/data/rna_silencing/results", seq_category, "coverage")
+all_files <- list.files(path = coverage_dir , pattern = ".pdf", full.names = TRUE, recursive = TRUE)
+
+## counter for visualized samples
+total_samples <- 0
+```
+
+
+### Samples - WT_S5-ChIP
+
+```{r WT_S5-ChIP, echo=FALSE}
+
+sample_name <- "WT_S5-ChIP"
+files <- str_subset(all_files, pattern="INPUT", negate = ignore_input_subtracted)
+files <- str_subset(files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+### Samples - 80_S5-ChIP
+
+```{r 80_S5-ChIP, echo=FALSE}
+
+sample_name <- "80_S5-ChIP"
+files <- str_subset(all_files, pattern="INPUT", negate = ignore_input_subtracted)
+files <- str_subset(files, pattern=count_mode)
+files <- str_subset(files, pattern=sample_name)
+
+total_samples <- total_samples + length(files)
+
+include_graphics(files)
+```
+
+## Total Samples: `r total_samples`

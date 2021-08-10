@@ -1,0 +1,132 @@
+
+# set working directory, paths will be relative to this
+#work_dir: /home/pmonteagudo/workspace/RNAdeg
+work_dir: /home/pmonteagudo/workspace/silencing_project
+
+#data_dir: /data/pablo/RNAdeg
+#data_dir: /gcm-lfs1/pablo/data/RNAdeg
+data_dir: /gcm-lfs1/pablo/data/rna_silencing
+
+
+##############################################################
+#---------------         Pipe-line        --------------------
+##############################################################
+
+#results_dir: /data/pablo/RNAdeg/results
+results_dir: /gcm-lfs1/pablo/data/rna_silencing/results
+
+# -------------------------------------------------------------
+# -------------       1. PreProcessing        -----------------
+# -------------------------------------------------------------
+
+#sample_annotation_file: /gcm-lfs1/pablo/data/rna_silencing/seq_data/sample_annotation.csv
+sample_annotation_file: /gcm-lfs1/pablo/data/rna_silencing/seq_data/file_annotation.csv
+
+
+##############################################################
+#--------------         Annotation        --------------------
+##############################################################
+
+# -----------
+# FASTA file
+# -----------
+
+## Genomes
+#genome_dir: /gcm-lfs1/pablo/data/rna_silencing/genomes/spombe
+genome_dir: /gcm-lfs1/pablo/data/rna_silencing/genomes/spombe_v2
+
+## Parastous:
+#fasta_file: /gcm-lfs1/pablo/data/rna_silencing/genomes/Schizosaccharomyces_pombe_all_chromosomes_chr.fa
+
+## (New) spombase:
+fasta_file: /gcm-lfs1/pablo/data/rna_silencing/genomes/spombe_v2/fasta/Schizosaccharomyces_pombe_all_chromosomes.fa
+
+## (New) ensembl:
+#fasta_file: /gcm-lfs1/pablo/data/rna_silencing/genomes/spombe_v2/fasta/Schizosaccharomyces_pombe.ASM294v2.dna.toplevel.fa
+
+# ----------------------
+# reference GTF/GFF file
+# ----------------------
+
+## Annotation
+#annotation_dir: /gcm-lfs1/pablo/data/rna_silencing/annotation/gff
+annotation_dir: /gcm-lfs1/pablo/data/rna_silencing/annotation/gff_v2
+
+## Parastous:
+#gtf_file: /gcm-lfs1/pablo/data/rna_silencing/annotation/gff/schizosaccharomyces_pombe.chr.extended.gff3
+#gtf_file: /gcm-lfs1/pablo/data/rna_silencing/annotation/gff/schizosaccharomyces_pombe.chr.extended.stranded.gff3
+
+## (New) PomBase:
+gtf_file: /gcm-lfs1/pablo/data/rna_silencing/annotation/gff_v2/Schizosaccharomyces_pombe_all_chromosomes.extended.gff3
+#gtf_file: /gcm-lfs1/pablo/data/rna_silencing/annotation/gff_v2/Schizosaccharomyces_pombe_all_chromosomes.extended_with_mat_locus.gff3
+
+## (New) ensembl:
+#gtf_file: /gcm-lfs1/pablo/data/rna_silencing/annotation/gff_v2/Schizosaccharomyces_pombe.ASM294v2.45.gff3
+
+# --------------------------------
+# Gene Information Table GDF file
+# --------------------------------
+
+## Parastous:
+#gdf_file: /gcm-lfs1/pablo/data/rna_silencing/annotation/gff/schizosaccharomyces_pombe.chr.extended.csv
+
+## (New) PomBase:
+#gdf_file: /gcm-lfs1/pablo/data/rna_silencing/annotation/gff_v2/Schizosaccharomyces_pombe_all_chromosomes.extended.gene.csv
+gdf_file: /gcm-lfs1/pablo/data/rna_silencing/annotation/gff_v2/Schizosaccharomyces_pombe_all_chromosomes.extended.features.csv
+
+## (New) ensembl:
+#gdf_file: /gcm-lfs1/pablo/data/rna_silencing/annotation/gff_v2/Schizosaccharomyces_pombe.ASM294v2.45.csv
+
+# ---------------------------------
+# Intron Information Table GDF file
+# ---------------------------------
+
+## (New) PomBase:
+intron_df_file: /gcm-lfs1/pablo/data/rna_silencing/annotation/gff_v2/Schizosaccharomyces_pombe_all_chromosomes.intron.csv
+
+
+## ----------
+## STAR Index: RNA
+## ----------
+
+## Parastous RNA STAR index:
+#rna_star_idx: /gcm-lfs1/pablo/data/rna_silencing/genomes/spombe/star_idx
+
+## My RNA STAR index:
+rna_star_idx: /gcm-lfs1/pablo/data/rna_silencing/genomes/spombe_v2/star_idx
+
+## ----------
+## STAR Index: ChIP
+## ----------
+
+## Parastous ChIP STAR index:
+#chip_star_idx: /gcm-lfs1/pablo/data/rna_silencing/genomes/spombe/star_nogtf_idx
+
+## My ChIP STAR index:
+chip_star_idx: /gcm-lfs1/pablo/data/rna_silencing/genomes/spombe_v2/star_nogtf_idx
+
+
+# -------------------------------------------------------------
+# ---------         IMPORTANT Parameters       ----------------
+# -------------------------------------------------------------
+
+## --------
+## Binaries
+## --------
+
+## bzip2
+bzip2: bzip2
+
+## bioawk
+bioawk: bioawk
+
+## STAR
+#star: /home/parastou/star_2.5.1b
+#star: /home/pmonteagudo/Software/STAR/bin/Linux_x86_64/STAR ## STAR_2.6.0a
+#star: /usr/local/bin/STAR ## STAR_2.5.4b
+star: /home/pmonteagudo/Software/STAR_v2.7/bin/Linux_x86_64/STAR ## STAR 2.7.3a_2020-01-23
+#star: /home/pmonteagudo/anaconda3/envs/heterochromatin/bin/STAR ## star_2.5.1b (Same version as Parastou!)
+
+## samtools
+#samtools: samtools
+samtools: /home/pmonteagudo/Software/samtools-1.10/samtools # samtools 1.10
