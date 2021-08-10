@@ -1,6 +1,6 @@
 # HetchromSilencing
 
-This repository contains the computational pipeline of the paper "[Heterochromatin reduces RNA Polymerase II occupancy, transcriptional efficiency and RNA stability]. It contains the scripts and software necessary for reproducing the results in the paper.
+This repository contains the computational pipeline of the paper **Ccr4-Not complex reduces transcription efficiency in heterochromatin**. It contains the scripts and software necessary for reproducing the results in the paper.
 
 ## Overview
 
@@ -16,9 +16,9 @@ In our paper we analyzed next-generation sequencing data for:
 
 in S. pombe fission yeast.
 
-The [notebooks](https://github.com/pablommesas/heterochromatin/tree/master/Notebooks) folders contain Jupyter notebooks that make up the actual pipe-line: [preprocessing](https://github.com/pablommesas/heterochromatin/tree/master/Notebooks/PreProcess), [analysing](https://github.com/pablommesas/heterochromatin/tree/master/Notebooks/RatioAnalyses), [visualizing results](https://github.com/pablommesas/heterochromatin/tree/master/Notebooks/Plots) and [computing coverage](https://github.com/pablommesas/heterochromatin/tree/master/Notebooks/Coverage) files.
+The [notebooks](https://github.com/canzarlab/heterochr_silencing/tree/master/Notebooks) folders contain Jupyter notebooks that make up the actual pipe-line: [preprocessing](https://github.com/canzarlab/heterochr_silencing/tree/master/Notebooks/PreProcess), [analysing](https://github.com/canzarlab/heterochr_silencing/tree/master/Notebooks/RatioAnalyses), [visualizing results](https://github.com/canzarlab/heterochr_silencing/tree/master/Notebooks/Plots) and [computing coverage](https://github.com/canzarlab/heterochr_silencing/tree/master/Notebooks/Coverage) files.
 
-All necessary auxiliary functions and scripts called within the pipe-line can be found in the [pyRNAdeg](https://github.com/pablommesas/heterochromatin/tree/master/pyRNAdeg) library.
+All necessary auxiliary functions and scripts called within the pipe-line can be found in the [pyRNAdeg](https://github.com/canzarlab/heterochr_silencing/tree/master/pyRNAdeg) library.
 
 ## Software requirements
 
